@@ -12,16 +12,16 @@ public class Fullbright extends Module {
 
     @Override
     public void onEnable() {
-        if (mc.options != null) prevGamma = mc.options.gamma.getValue();
+        if (mc.options != null) prevGamma = mc.options.getGamma().getValue();
     }
 
     @Override
     public void onDisable() {
-        if (mc.options != null) mc.options.gamma.setValue(prevGamma);
+        if (mc.options != null) mc.options.getGamma().setValue(prevGamma);
     }
 
     @Override
     public void onTick(MinecraftClient client) {
-        if (client.options != null) client.options.gamma.setValue(16.0);
+        if (client.options != null) client.options.getGamma().setValue(16.0);
     }
 }
