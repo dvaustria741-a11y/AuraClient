@@ -22,10 +22,6 @@ public class ESP extends Module {
         WorldRenderEvents.AFTER_ENTITIES.register(this::render);
     }
 
-    // As of 1.21.9+, the world renderer no longer hands rendering code a live World/Camera —
-    // it hands over a frozen per-frame WorldRenderState instead, populated with lightweight
-    // EntityRenderState snapshots. We read entity position/size/type straight off those instead
-    // of pulling a live Entity from the world.
     private void render(WorldRenderContext ctx) {
         if (!isEnabled()) return;
 
@@ -55,7 +51,7 @@ public class ESP extends Module {
 
             float hw = state.width / 2f;
             Box box = new Box(-hw, 0, -hw, hw, state.height, hw);
-            VertexConsumer lines = vcp.getBuffer(RenderLayer.getLines());
+            VertexConsumer lines = vcp.getBuffer(RenderLayer.LINES);
             drawBox(matrices, lines, box, r, g, b);
 
             matrices.pop();
@@ -67,13 +63,10 @@ public class ESP extends Module {
         float x1 = (float) box.minX, y1 = (float) box.minY, z1 = (float) box.minZ;
         float x2 = (float) box.maxX, y2 = (float) box.maxY, z2 = (float) box.maxZ;
         float a = 1.0f;
-        // bottom
         l(vc,m, x1,y1,z1, x2,y1,z1, r,g,b,a); l(vc,m, x2,y1,z1, x2,y1,z2, r,g,b,a);
         l(vc,m, x2,y1,z2, x1,y1,z2, r,g,b,a); l(vc,m, x1,y1,z2, x1,y1,z1, r,g,b,a);
-        // top
         l(vc,m, x1,y2,z1, x2,y2,z1, r,g,b,a); l(vc,m, x2,y2,z1, x2,y2,z2, r,g,b,a);
         l(vc,m, x2,y2,z2, x1,y2,z2, r,g,b,a); l(vc,m, x1,y2,z2, x1,y2,z1, r,g,b,a);
-        // verticals
         l(vc,m, x1,y1,z1, x1,y2,z1, r,g,b,a); l(vc,m, x2,y1,z1, x2,y2,z1, r,g,b,a);
         l(vc,m, x2,y1,z2, x2,y2,z2, r,g,b,a); l(vc,m, x1,y1,z2, x1,y2,z2, r,g,b,a);
     }
