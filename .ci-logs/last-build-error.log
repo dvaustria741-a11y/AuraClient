@@ -6,47 +6,36 @@ Fabric Loom: 1.14.10
 Cannot remap modifiers because it does not exists in any of the targets [] or their parents.
 
 > Task :compileJava
-/home/runner/work/AuraClient/AuraClient/src/main/java/com/auraclient/module/movement/Sprint.java:16: error: cannot find symbol
-        if (input.movementForward > 0f && !client.player.isSprinting()
-                 ^
-  symbol:   variable movementForward
-  location: variable input of type Input
+/home/runner/work/AuraClient/AuraClient/src/main/java/com/auraclient/module/misc/FastPlace.java:3: error: cannot find symbol
+import com.auraclient.mixin.MinecraftClientAccessor;
+                           ^
+  symbol:   class MinecraftClientAccessor
+  location: package com.auraclient.mixin
 /home/runner/work/AuraClient/AuraClient/src/main/java/com/auraclient/module/render/ESP.java:58: error: cannot find symbol
             VertexConsumer lines = vcp.getBuffer(RenderLayer.getLines());
                                                             ^
   symbol:   method getLines()
   location: class RenderLayer
-/home/runner/work/AuraClient/AuraClient/src/main/java/com/auraclient/module/misc/FastPlace.java:14: error: itemUseCooldown has private access in MinecraftClient
-        if (client.itemUseCooldown > 0) client.itemUseCooldown = 0;
-                  ^
-/home/runner/work/AuraClient/AuraClient/src/main/java/com/auraclient/module/misc/FastPlace.java:14: error: itemUseCooldown has private access in MinecraftClient
-        if (client.itemUseCooldown > 0) client.itemUseCooldown = 0;
-                                              ^
+/home/runner/work/AuraClient/AuraClient/src/main/java/com/auraclient/module/misc/FastPlace.java:15: error: cannot find symbol
+        MinecraftClientAccessor accessor = (MinecraftClientAccessor) client;
+        ^
+  symbol:   class MinecraftClientAccessor
+  location: class FastPlace
+/home/runner/work/AuraClient/AuraClient/src/main/java/com/auraclient/module/misc/FastPlace.java:15: error: cannot find symbol
+        MinecraftClientAccessor accessor = (MinecraftClientAccessor) client;
+                                            ^
+  symbol:   class MinecraftClientAccessor
+  location: class FastPlace
 /home/runner/work/AuraClient/AuraClient/src/main/java/com/auraclient/AuraClient.java:32: error: incompatible types: String cannot be converted to Identifier
                 new KeyBinding.Category("category.auraclient")
                                         ^
-/home/runner/work/AuraClient/AuraClient/src/main/java/com/auraclient/gui/AuraClickGui.java:123: error: method does not override or implement a method from a supertype
-    @Override
-    ^
-/home/runner/work/AuraClient/AuraClient/src/main/java/com/auraclient/gui/AuraClickGui.java:125: error: method mouseClicked in interface ParentElement cannot be applied to given types;
-        if (btn != 0) return super.mouseClicked(mx, my, btn);
-                                  ^
-  required: Click,boolean
-  found:    double,double,int
-  reason: actual and formal argument lists differ in length
-/home/runner/work/AuraClient/AuraClient/src/main/java/com/auraclient/gui/AuraClickGui.java:156: error: method mouseClicked in interface ParentElement cannot be applied to given types;
-        return super.mouseClicked(mx, my, btn);
-                    ^
-  required: Click,boolean
-  found:    double,double,int
-  reason: actual and formal argument lists differ in length
 Note: /home/runner/work/AuraClient/AuraClient/src/main/java/com/auraclient/gui/HudRenderer.java uses or overrides a deprecated API.
 Note: Recompile with -Xlint:deprecation for details.
 Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
-8 errors
+5 errors
 
 > Task :compileJava FAILED
-gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run-1782725133860.json
+gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run-1782725253386.json
 
 [Incubating] Problems report is available at: file:///home/runner/work/AuraClient/AuraClient/build/reports/problems/problems-report.html
 
@@ -56,43 +45,32 @@ FAILURE: Build failed with an exception.
 Execution failed for task ':compileJava' (registered by plugin class 'org.gradle.api.plugins.JavaBasePlugin').
 > Compilation failed; see the compiler output below.
   Note: /home/runner/work/AuraClient/AuraClient/src/main/java/com/auraclient/gui/HudRenderer.java uses or overrides a deprecated API.
-  /home/runner/work/AuraClient/AuraClient/src/main/java/com/auraclient/gui/AuraClickGui.java:125: error: method mouseClicked in interface ParentElement cannot be applied to given types;
-          if (btn != 0) return super.mouseClicked(mx, my, btn);
-                                    ^
-    required: Click,boolean
-    found:    double,double,int
-    reason: actual and formal argument lists differ in length
-  /home/runner/work/AuraClient/AuraClient/src/main/java/com/auraclient/gui/AuraClickGui.java:156: error: method mouseClicked in interface ParentElement cannot be applied to given types;
-          return super.mouseClicked(mx, my, btn);
-                      ^
-    required: Click,boolean
-    found:    double,double,int
-    reason: actual and formal argument lists differ in length
   Note: Recompile with -Xlint:deprecation for details.
   /home/runner/work/AuraClient/AuraClient/src/main/java/com/auraclient/AuraClient.java:32: error: incompatible types: String cannot be converted to Identifier
                   new KeyBinding.Category("category.auraclient")
                                           ^
-  /home/runner/work/AuraClient/AuraClient/src/main/java/com/auraclient/module/movement/Sprint.java:16: error: cannot find symbol
-          if (input.movementForward > 0f && !client.player.isSprinting()
-                   ^
-    symbol:   variable movementForward
-    location: variable input of type Input
-  /home/runner/work/AuraClient/AuraClient/src/main/java/com/auraclient/module/misc/FastPlace.java:14: error: itemUseCooldown has private access in MinecraftClient
-          if (client.itemUseCooldown > 0) client.itemUseCooldown = 0;
-                    ^
-  /home/runner/work/AuraClient/AuraClient/src/main/java/com/auraclient/module/misc/FastPlace.java:14: error: itemUseCooldown has private access in MinecraftClient
-          if (client.itemUseCooldown > 0) client.itemUseCooldown = 0;
-                                                ^
-  /home/runner/work/AuraClient/AuraClient/src/main/java/com/auraclient/gui/AuraClickGui.java:123: error: method does not override or implement a method from a supertype
-      @Override
-      ^
+  /home/runner/work/AuraClient/AuraClient/src/main/java/com/auraclient/module/misc/FastPlace.java:3: error: cannot find symbol
+  import com.auraclient.mixin.MinecraftClientAccessor;
+                             ^
+    symbol:   class MinecraftClientAccessor
+    location: package com.auraclient.mixin
+  /home/runner/work/AuraClient/AuraClient/src/main/java/com/auraclient/module/misc/FastPlace.java:15: error: cannot find symbol
+          MinecraftClientAccessor accessor = (MinecraftClientAccessor) client;
+          ^
+    symbol:   class MinecraftClientAccessor
+    location: class FastPlace
+  /home/runner/work/AuraClient/AuraClient/src/main/java/com/auraclient/module/misc/FastPlace.java:15: error: cannot find symbol
+          MinecraftClientAccessor accessor = (MinecraftClientAccessor) client;
+                                              ^
+    symbol:   class MinecraftClientAccessor
+    location: class FastPlace
   Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
   /home/runner/work/AuraClient/AuraClient/src/main/java/com/auraclient/module/render/ESP.java:58: error: cannot find symbol
               VertexConsumer lines = vcp.getBuffer(RenderLayer.getLines());
                                                               ^
     symbol:   method getLines()
     location: class RenderLayer
-  8 errors
+  5 errors
 
 * Try:
 > Check your code and dependencies to fix the compilation error(s)
@@ -134,44 +112,33 @@ org.gradle.api.tasks.TaskExecutionException: Execution failed for task ':compile
 	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
 	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:47)
 Caused by: org.gradle.api.internal.tasks.compile.CompilationFailedException: Compilation failed; see the compiler output below.
-/home/runner/work/AuraClient/AuraClient/src/main/java/com/auraclient/module/movement/Sprint.java:16: error: cannot find symbol
-        if (input.movementForward > 0f && !client.player.isSprinting()
-                 ^
-  symbol:   variable movementForward
-  location: variable input of type Input
+/home/runner/work/AuraClient/AuraClient/src/main/java/com/auraclient/module/misc/FastPlace.java:3: error: cannot find symbol
+import com.auraclient.mixin.MinecraftClientAccessor;
+                           ^
+  symbol:   class MinecraftClientAccessor
+  location: package com.auraclient.mixin
 /home/runner/work/AuraClient/AuraClient/src/main/java/com/auraclient/module/render/ESP.java:58: error: cannot find symbol
             VertexConsumer lines = vcp.getBuffer(RenderLayer.getLines());
                                                             ^
   symbol:   method getLines()
   location: class RenderLayer
-/home/runner/work/AuraClient/AuraClient/src/main/java/com/auraclient/module/misc/FastPlace.java:14: error: itemUseCooldown has private access in MinecraftClient
-        if (client.itemUseCooldown > 0) client.itemUseCooldown = 0;
-                  ^
-/home/runner/work/AuraClient/AuraClient/src/main/java/com/auraclient/module/misc/FastPlace.java:14: error: itemUseCooldown has private access in MinecraftClient
-        if (client.itemUseCooldown > 0) client.itemUseCooldown = 0;
-                                              ^
+/home/runner/work/AuraClient/AuraClient/src/main/java/com/auraclient/module/misc/FastPlace.java:15: error: cannot find symbol
+        MinecraftClientAccessor accessor = (MinecraftClientAccessor) client;
+        ^
+  symbol:   class MinecraftClientAccessor
+  location: class FastPlace
+/home/runner/work/AuraClient/AuraClient/src/main/java/com/auraclient/module/misc/FastPlace.java:15: error: cannot find symbol
+        MinecraftClientAccessor accessor = (MinecraftClientAccessor) client;
+                                            ^
+  symbol:   class MinecraftClientAccessor
+  location: class FastPlace
 /home/runner/work/AuraClient/AuraClient/src/main/java/com/auraclient/AuraClient.java:32: error: incompatible types: String cannot be converted to Identifier
                 new KeyBinding.Category("category.auraclient")
                                         ^
-/home/runner/work/AuraClient/AuraClient/src/main/java/com/auraclient/gui/AuraClickGui.java:123: error: method does not override or implement a method from a supertype
-    @Override
-    ^
-/home/runner/work/AuraClient/AuraClient/src/main/java/com/auraclient/gui/AuraClickGui.java:125: error: method mouseClicked in interface ParentElement cannot be applied to given types;
-        if (btn != 0) return super.mouseClicked(mx, my, btn);
-                                  ^
-  required: Click,boolean
-  found:    double,double,int
-  reason: actual and formal argument lists differ in length
-/home/runner/work/AuraClient/AuraClient/src/main/java/com/auraclient/gui/AuraClickGui.java:156: error: method mouseClicked in interface ParentElement cannot be applied to given types;
-        return super.mouseClicked(mx, my, btn);
-                    ^
-  required: Click,boolean
-  found:    double,double,int
-  reason: actual and formal argument lists differ in length
 Note: /home/runner/work/AuraClient/AuraClient/src/main/java/com/auraclient/gui/HudRenderer.java uses or overrides a deprecated API.
 Note: Recompile with -Xlint:deprecation for details.
 Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
-8 errors
+5 errors
 	at org.gradle.api.internal.tasks.compile.JdkJavaCompiler.execute(JdkJavaCompiler.java:88)
 	at org.gradle.api.internal.tasks.compile.JdkJavaCompiler.execute(JdkJavaCompiler.java:49)
 	at org.gradle.api.internal.tasks.compile.NormalizingJavaCompiler.delegateAndHandleErrors(NormalizingJavaCompiler.java:98)
@@ -312,5 +279,5 @@ You can use '--warning-mode all' to show the individual deprecation warnings and
 
 For more on this, please refer to https://docs.gradle.org/9.6.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
 
-BUILD FAILED in 17s
+BUILD FAILED in 18s
 1 actionable task: 1 executed
