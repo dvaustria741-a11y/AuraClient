@@ -569,3 +569,4 @@ public class AuraClickGui extends Screen {
     @Override public boolean shouldPause()      { return false; }
     @Override public boolean shouldCloseOnEsc() { return true;  }
 }
+
