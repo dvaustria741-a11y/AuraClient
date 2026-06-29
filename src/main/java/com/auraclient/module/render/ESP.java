@@ -3,7 +3,7 @@ package com.auraclient.module.render;
 import com.auraclient.module.Module;
 import net.fabricmc.fabric.api.client.rendering.v1.world.WorldRenderContext;
 import net.fabricmc.fabric.api.client.rendering.v1.world.WorldRenderEvents;
-import net.minecraft.client.render.RenderLayer;
+import net.minecraft.client.render.RenderLayers;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.state.EntityRenderState;
@@ -51,7 +51,7 @@ public class ESP extends Module {
 
             float hw = state.width / 2f;
             Box box = new Box(-hw, 0, -hw, hw, state.height, hw);
-            VertexConsumer lines = vcp.getBuffer(RenderLayer.LINES);
+            VertexConsumer lines = vcp.getBuffer(RenderLayers.LINES);
             drawBox(matrices, lines, box, r, g, b);
 
             matrices.pop();
